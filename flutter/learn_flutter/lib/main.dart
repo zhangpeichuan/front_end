@@ -1,6 +1,6 @@
 import 'dart:core';
-import 'package:flutter/animation.dart';
 import 'package:flutter/material.dart';
+import 'package:learn_flutter/service/http_request.dart';
 
 main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: HYHomeContent(),
+      home: HYHomePage(),
     );
   }
 }
@@ -23,12 +23,6 @@ class HYHomePage extends StatelessWidget {
         title: Text('基础Widget'),
       ),
       body: HYHomeContent(),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.arrow_upward),
-        onPressed: (){
-          print('floatingActionButton onPressed');
-        },
-      ),
  );
   }
 }
@@ -40,68 +34,22 @@ class HYHomeContent extends StatefulWidget {
 }
 
 class _HYHomeContentState extends State<HYHomeContent> {
-  ScrollController _controller = ScrollController(initialScrollOffset: 200);
-  bool _isShowFlatingButton = false;
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
+    //发送网络请求
+    // //1、创建Dio对象
+    // final dio = Dio();
+    // //2、发送网络请求
+    // dio.get('https://httpbin.org/get').then((value) => print(value));
+    // dio.post('https://httpbin.org/post').then((value) => print(value));
 
-    // _controller.addListener(() {
-    //   print('监听到滚动${_controller.offset}');
-    //   setState(() {
-    //     _isShowFlatingButton = _controller.offset >=500;
-    //   });
-    // });
-  }
-  @override
-  void dispose() {
-    // TODO: implement dispose
-    super.dispose();
-    // _controller.dispose();
+    HttpRequest.request('https://httpbin.org/get',params: {"name":"123"}).then((value) => print(value));
   }
   @override
   Widget build(BuildContext context) {
-  /**
-   * 两种方式监听
-   * controller
-   * 1、可以设置默认值
-   * 2、可以监听，也可以监听滚动的位置
-   * 3、不能监听开始滚动、结束滚动
-   * NotifcationListener
-   * 1、监听开始滚动和结束滚动
-   **/
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('基础Widget'),
-      ),
-      body: NotificationListener(
-        onNotification: (ScrollNotification notification){
-          if (notification is ScrollStartNotification) {
-            print('开始滚动 ${notification.metrics.pixels}');
-          }else if (notification is ScrollEndNotification){
-            print('结束滚动 ${notification.metrics.pixels} ${notification.metrics.maxScrollExtent}');
-          }else if (notification is ScrollUpdateNotification){
-            print('更新滚动 ${notification.metrics.maxScrollExtent}');
-          }
-          return true;
-        },
-        child: ListView.builder(
-          controller: _controller,
-          itemCount: 100,
-          itemBuilder: (BuildContext context,int index){
-            return ListTile(
-              leading: Icon(Icons.people),
-              title: Text('联系人${index}'), );
-          },),
-      ),
-      floatingActionButton: _isShowFlatingButton ? FloatingActionButton(
-        child: Icon(Icons.arrow_upward),
-        onPressed: (){
-          print('floatingActionButton onPressed');
-          _controller.animateTo(0, duration: Duration(seconds:1), curve: Curves.easeIn);
-        },
-      ): null,
-    );
+
+    return Text('HelloWorld!');
   }
 }
