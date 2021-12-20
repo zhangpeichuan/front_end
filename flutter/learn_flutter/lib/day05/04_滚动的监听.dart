@@ -56,16 +56,11 @@ class _HYHomeContentState extends State<HYHomeContent> {
     // });
   }
   void runCalc() async {
+    //全局函数才能调用
     var result = await compute(calc,100);
     print(result);
   }
-  Future<int> calc(int count) async{
-    int total = 0;
-    for(var i = 0 ;i<count;i++){
-      total += i;
-    }
-    return total;
-  }
+
   @override
   void dispose() {
     // TODO: implement dispose
@@ -116,4 +111,11 @@ class _HYHomeContentState extends State<HYHomeContent> {
       ): null,
     );
   }
+}
+Future<int> calc(int count) async{
+  int total = 0;
+  for(var i = 0 ;i<count;i++){
+    total += i;
+  }
+  return total;
 }

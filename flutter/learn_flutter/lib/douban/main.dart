@@ -1,6 +1,5 @@
 import 'dart:core';
 import 'package:flutter/material.dart';
-import 'package:learn_flutter/service/http_request.dart';
 
 main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
@@ -20,7 +19,7 @@ class HYHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('基础Widget'),
+        title: Text('豆瓣APP'),
       ),
       body: HYHomeContent(),
     );
@@ -38,20 +37,23 @@ class _HYHomeContentState extends State<HYHomeContent> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    //发送网络请求
-    // //1、创建Dio对象
-    // final dio = Dio();
-    // //2、发送网络请求
-    // dio.get('https://httpbin.org/get').then((value) => print(value));
-    // dio.post('https://httpbin.org/post').then((value) => print(value));
-
-    HttpRequest.request('https://httpbin.org/get',params: {"name":"123"}).then((value) => print(value));
-    HttpRequest.request('/post',method: 'post',params: {"name":"123"}).then((value) => print(value));
-
   }
   @override
   Widget build(BuildContext context) {
 
-    return Text('HelloWorld!');
+    return Center(child: HYStarRating());
+  }
+}
+class HYStarRating extends StatefulWidget {
+  const HYStarRating({Key? key}) : super(key: key);
+
+  @override
+  _HYStarRatingState createState() => _HYStarRatingState();
+}
+
+class _HYStarRatingState extends State<HYStarRating> {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
   }
 }
