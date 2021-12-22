@@ -1,3 +1,5 @@
+import 'dart:math';
+
 class Person {
   String ? name;
   String ? avatarURL;
@@ -26,7 +28,7 @@ class MovieItem {
   List<Actor> ? casts;
   Director ? director;
   String ? originalTitle;
-
+  MovieItem();
   MovieItem.fromMap(Map<String, dynamic> json) {
     rank = counter++;
     imageURL = json["images"]["medium"];
