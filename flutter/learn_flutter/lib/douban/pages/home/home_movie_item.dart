@@ -108,11 +108,14 @@ class HYHomeMoveItem extends StatelessWidget {
   }
 
   Widget builerContentInfoRating(){
-    return Row(
-      children: [
-        HYStarRating(rating: movie.rating ?? Random().nextDouble()+Random().nextInt(4),size: 20,),
-        Text((Random().nextDouble()+Random().nextInt(4)).toStringAsFixed(2),style: TextStyle(fontSize: 18,color: Color.fromARGB(255, 131, 95, 36)),),
-      ],
+    //FittedBox 适配Row
+    return FittedBox(
+      child: Row(
+        children: [
+          HYStarRating(rating: movie.rating ?? Random().nextDouble()+Random().nextInt(4),size: 20,),
+          Text((Random().nextDouble()+Random().nextInt(4)).toStringAsFixed(2),style: TextStyle(fontSize: 18,color: Color.fromARGB(255, 131, 95, 36)),),
+        ],
+      ),
     );
   }
   Widget buildConentInfoDesc(){
