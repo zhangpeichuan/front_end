@@ -53,6 +53,7 @@ class HYHomePage extends StatelessWidget {
               imageURL: imageUrl,
             ));
       },
-    ));
+    ),
+    );
   }
 }
