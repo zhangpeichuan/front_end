@@ -6,8 +6,9 @@ class HYSecondPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Theme(
+      //没有完全创建Theme Data，不会覆盖主题
         data: Theme.of(context).copyWith(
-            primaryColor: Colors.greenAccent
+          colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.green).copyWith(secondary: Colors.black),
         ),
         child: Scaffold(
           appBar: AppBar(
