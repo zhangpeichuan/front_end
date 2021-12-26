@@ -1,0 +1,26 @@
+1、新建项目
+	flutter create xxxxx
+2、对项目进行配置
+	appid
+	应用名称
+	icon
+	launcher
+3、项目的目录结构
+	pages
+	widgets
+	service/network
+	router
+	viewmodel
+	model
+	shared
+	constants
+	utils
+
+	文件划分
+	core
+	ui
+4、主题风格
+
+5、路由配置
+
+6、mainScreen
