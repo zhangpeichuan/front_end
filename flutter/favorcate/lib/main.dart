@@ -1,3 +1,4 @@
+import 'package:favorcate/core/viewmodel/favor_view_model.dart';
 import 'package:favorcate/core/viewmodel/meal_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -8,9 +9,11 @@ import 'ui/shared/size_fix.dart';
 
 void main() {
   runApp(
-      ChangeNotifierProvider(
-        create: (ctx)=>HYMealViewModel(),
-        child: MyApp(),)
+    MultiProvider(providers: [
+        ChangeNotifierProvider(create: (ctx)=>HYMealViewModel(),),
+      ChangeNotifierProvider(create: (ctx)=>HYFavorViewModel(),)
+
+    ],child: MyApp(),)
   );
 }
 

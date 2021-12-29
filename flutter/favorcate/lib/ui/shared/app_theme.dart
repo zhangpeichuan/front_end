@@ -6,17 +6,21 @@ class AppTheme{
   static const double smallFontSize = 16;
   static const double normalFontSize = 20;
   static const double largeFontSize = 24;
-  //2.普通模式
-  static const Color normalColor = Colors.red;
+  static const double xLargeFontSize = 28;
+  static const double xxLargeFontSize = 32;
 
   // 2.亮色主题
   static final ThemeData lightTheme = ThemeData(
-      primarySwatch: Colors.red,
-      textTheme: TextTheme(
+    primaryColor: Colors.pink,
+    primaryColorLight:Colors.pink,
+    primaryColorDark:Colors.pink,
+    canvasColor: Color.fromRGBO(255, 254, 222, 1),
+    textTheme: TextTheme(
         bodyText2: TextStyle(fontSize: bodyFontSize),
         headline4: TextStyle(fontSize: smallFontSize, ),
         headline3: TextStyle(fontSize: normalFontSize),
-        headline2: TextStyle(fontSize: largeFontSize, color: Colors.black),
+        headline2: TextStyle(fontSize: largeFontSize, color: Colors.black,fontWeight: FontWeight.w700),
+        headline1: TextStyle(fontSize: xLargeFontSize, color: Colors.black,fontWeight: FontWeight.w700),
       ),
     colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.pink).copyWith(secondary: Colors.orange),
 
@@ -24,12 +28,16 @@ class AppTheme{
   // 3.暗黑主题
   static const Color darkColor = Colors.green;
   static final ThemeData darkTheme = ThemeData(
-      primaryColor: Colors.grey,
-      textTheme: TextTheme(
+    primaryColor: Colors.grey,
+    primaryColorLight:Colors.grey,
+    primaryColorDark:Colors.grey,
+    canvasColor: Color.fromRGBO(255, 254, 222, 1),
+    textTheme: TextTheme(
         bodyText2: TextStyle(fontSize: bodyFontSize),
         headline4: TextStyle(fontSize: smallFontSize, ),
         headline3: TextStyle(fontSize: normalFontSize),
-        headline2: TextStyle(fontSize: largeFontSize, color: Colors.black),
+        headline2: TextStyle(fontSize: largeFontSize, color: Colors.black,fontWeight: FontWeight.w700),
+        headline1: TextStyle(fontSize: xLargeFontSize, color: Colors.black,fontWeight: FontWeight.w700),
       ),
     colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.green).copyWith(secondary: Colors.white),
 

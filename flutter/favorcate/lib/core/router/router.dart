@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
 
-import 'package:favorcate/core/model/category_model.dart';
 
-
-import '../../ui/pages/main/main.dart';
-import '../../ui/pages/home/home.dart';
-import '../../ui/pages/favor/favor.dart';
-import '../../ui/pages/meal/meal.dart';
-import '../../ui/pages/unkown/unknown.dart';
+import 'package:favorcate/ui/pages/main/main.dart';
+import 'package:favorcate/ui/pages/favor/favor.dart';
+import 'package:favorcate/ui/pages/meal/meal.dart';
+import 'package:favorcate/ui/pages/unkown/unknown.dart';
+import 'package:favorcate/ui/pages/detail/detail.dart';
 class HYRouter{
   static final Map<String,WidgetBuilder> routes = {
     HYMainSceen.routeName:(ctx)=>HYMainSceen(),
     HYMealScreen.routeName:(ctx)=>HYMealScreen(),
     HYFavorScreen.routeName:(ctx)=>HYFavorScreen(),
-
+    HYDetailSceen.routeName:(ctx)=>HYDetailSceen(),
   };
   static final String initialRoute = HYMainSceen.routeName;
   static final RouteFactory generateRoute = (settings){
