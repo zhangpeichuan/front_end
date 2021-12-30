@@ -60,10 +60,12 @@ class HYMealItem extends StatelessWidget {
     return Consumer<HYFavorViewModel>(
       builder: (ctx,favorVM,child){
         //1、判断是否是收藏状态
-        final iconData = favorVM.isFavor(meal) ? Icons.favorite:Icons.favorite_border;
-        final iconColor = favorVM.isFavor(meal) ? Theme.of(context).primaryColor:Colors.grey;
+        final isFavor = favorVM.isFavor(meal);
+        final iconData = isFavor ? Icons.favorite:Icons.favorite_border;
+        final iconColor = isFavor ? Theme.of(context).primaryColor:Colors.grey;
+        final iconNote = isFavor ? "已收藏":"未收藏";
         return GestureDetector(
-            child: HYOperationItem(Icon(iconData,color: iconColor,), '收藏'),
+            child: HYOperationItem(Icon(iconData,color: iconColor,), iconNote),
           onTap: ()=>favorVM.handleMeal(meal),
         );
       },
