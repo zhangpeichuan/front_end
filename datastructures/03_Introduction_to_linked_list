@@ -1,0 +1,15 @@
+
+struct{
+    int data;   //4 byte
+    Node*  next;4 byte//Node start
+}
+head-
+address of the head node gives us access of the complete List
+
+traverse
+Access to elements : O(n)
+Insert:0(n),no shift any element
+
+
+
+

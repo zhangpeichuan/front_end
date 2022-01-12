@@ -1,5 +1,6 @@
 import 'initialize_items.dart';
 import 'package:flutter/material.dart';
+import 'package:favorcate/ui/pages/home/home_drawer.dart';
 class HYMainSceen extends StatefulWidget {
   static final String routeName = '/';
 
@@ -29,6 +30,13 @@ class _HYMainSceenState extends State<HYMainSceen> {
         index: _currentIndex,
         children: pages,
       ),
+      drawer: HYHomeDrawer(),
+      onDrawerChanged: (open){
+        if (open) {
+          // Navigator.of(context).pushNamed(HYFilterScreen.routeName);
+        }
+      },
     );
   }
+
 }

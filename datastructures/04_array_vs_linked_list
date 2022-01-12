@@ -1,0 +1,18 @@
+
+
+
+
+1)cost of accessing an element
+2)memory requirements 
+3)cost of inserting an element
+4)ease of use
+Array                               Listed List
+1)constant time-O(1)            Average cost O(n)
+2)Fixed size                    No unused memory|Extra memory for pointer variables
+  memory may not be avaiable    memory may be avaiable as
+  as one large block                multiple small blocks
+3)at beginning - O(n)           O(1)
+  at end - 0(1)[not full]       O(n)
+         - O(n) array Full
+  at i th position -O(n)        O(n)
+4)     Easy                     

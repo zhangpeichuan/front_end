@@ -1,0 +1,29 @@
+List    ADT
+- store a given number of element of a given data-type
+- write/modify element at a position
+- read element at a position
+int A[10];
+A[0] = 2;
+print A[i];
+List
+- empty List has size 0
+- insert
+- remove
+- count
+- read/modify element at a position
+- specity data type
+A[0]A[1] 
+[][][][][][][][][][][][]
+int A[MAXSIZE]
+int end = -1;
+insert(2);//0
+insert(4);//1
+insert(6);//2
+insert(7);//3
+insert(5 at:3)
+When array is full,create a new larger array double size,copy previous
+array into the new array,free the memory for the previous array
+(1) Access -Read/Write element at an index |constant time O(1)
+(2) Insert -O(n)
+(3) Remove -O(n)
+(4) Add    -O(n)
