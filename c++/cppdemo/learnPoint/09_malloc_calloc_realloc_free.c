@@ -23,14 +23,21 @@ int main(){
     // p = (int *)calloc(n,sizeof(int));
 
     printf("p address %p value %d \n",p,*p);
-    // for (int i = 0; i < n; i++)
-    // {
-    //     *(p+i) = i;
-    // }
     for (int i = 0; i < n; i++)
     {
-        printf("%d %d \n",*(p+i),p[i]);
+        *(p+i) = i+1;
     }
-    free(p);
+    for (int i = 0; i < n; i++)
+    {
+        printf("%p %d \n",p+i,p[i]);
+    }
+    int *B = realloc(p,n*sizeof(int));//(p,0)==free(p)
+    //realloc(NULL,n*sizeof(int))//equal to malloc
+    // free(p);//After free,adjust pointer to NULL
+    // p = NULL;
+    for (int i = 0; i < 2*n; i++)
+    {
+        printf("%p %d \n",B+i,B[i]);
+    }
     return 0;
 }
