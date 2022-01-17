@@ -1,0 +1,5 @@
+Binary search Tree
+ a Binary tree
+ for each node,value of all the nodes in 
+ left subtree is lesser or equal value of 
+ all the node right subtree is greater
