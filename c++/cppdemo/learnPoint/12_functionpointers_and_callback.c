@@ -16,17 +16,27 @@ void B(void (*ptr)())//Function pointer as argument
 // if first element has higher rank,
 // 0 if elements are equal and -1 if secound element has higher rank
 void bubbleSort(int *A,int n,int (*compare)(int,int)){
-    int i,j,tmp;
-    for (i = 0; i < n; i++)
+    int tmp;
+    for (int i = 0; i < n-1; i++)
     {
-        for (j = 0; j < n-1; j++)
+        printf("第%d 遍:\n",i+1);
+        for (int j = 0; j < n-1; j++)
         {
-             if(compare(A[j],A[j+i]) > 0){
+            printf("第%d 遍: 第%d次交换",i+1,j+1);
+
+             if(compare(A[j],A[j+1]) > 0){
             // if (A[j] > A[j+1]){//compare A[j] with A[j+1] and SWAP if need
                 tmp = A[j];
                 A[j] = A[j+1];
                 A[j+1] = tmp;
             }
+            printf("第%d 遍:最终结果",i+1);
+            for (int k = 0; k < n; k++)
+            {
+                printf("%d ",*(A+k));
+            }
+            printf("\n###########");
+
         }
     }
 }
