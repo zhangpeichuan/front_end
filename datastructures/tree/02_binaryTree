@@ -1,0 +1,29 @@
+strict/Proper Binary tree
+    each node can have either 2 or 0 children
+Complete Binary Tree
+    All levels expect possibly the last are 
+    completely filled and all nodes are as 
+    left as possible
+max No. of nodes at level i = 2i
+Perfect Binary Tree
+Max nodes
+= 20+21+...+2h = 2H+1 -1 = 2(no.  of level) - 1
+h is Height of tree
+n =  (2H+1)-1 =no. of nodes 
+n+1 = 2H+1 
+n = log2(h+1)-1
+height of Perfect Binary tree with n nodes
+h = log2(n+1) - 1
+height of completely Binary tree with n nodes
+n = [log2(n)]
+
+blance Binary tree
+implement Binary tree
+a) dynamically create nodes
+b) arrays
+for node at index i
+left child inode is 2*i+1;
+right children inode is 2*i+2
+in Complete Binary tree
+
+

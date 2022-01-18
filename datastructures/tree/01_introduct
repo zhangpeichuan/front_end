@@ -1,0 +1,39 @@
+Introduct of Tree
+recursiver datastructures
+root
+children
+parent
+sibling -  has same parent
+leaf    - no children
+cousin  
+if we can go from A to B
+A is ancestor of B
+B is de scedent of A 
+
+subtree
+left subtree
+right subtree
+
+Depth and Height
+Depth of x :
+length of the path from root to x
+No. of edges in path from root to x
+Height of x :
+No. of edges in longest of path from x to a leaf
+Height of leaf = 0
+Height of root node = Height
+Height of tree = Height of root node
+ 
+Binary tree
+a tree in which node can have at most 2 children
+Application
+1)store naturally
+    hierarchical data -> eg:file system
+2)organize data
+    for quick search ,insertion,deletion
+                    -> Binary search tree
+3)trie->dirctionary
+4)network routing algorithm
+
+
+
