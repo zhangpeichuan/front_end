@@ -15,15 +15,16 @@ BstNode* GetNewNode(int data){
 }
 BstNode* Insert(BstNode* rootPtr,int data)
 {
-    if(rootPtr == NULL)  
+    if(rootPtr == NULL)
     {
         rootPtr = GetNewNode(data);
     }else if (data <= rootPtr->data)
     {
-        return Insert(rootPtr->left,data);
+        rootPtr->left = Insert(rootPtr->left,data);
     }else{
-        return Insert(rootPtr->right,data);
+        rootPtr->right = Insert(rootPtr->right,data);
     }
+    return rootPtr;
 }
 bool Search(BstNode* root,int data){
     if (root == NULL){
@@ -31,7 +32,7 @@ bool Search(BstNode* root,int data){
     }else if (data == root->data)
     {
         return true;
-    }else if (data <= (root->data)
+    }else if (data <= (root->data))
     {
         return Search(root->left,data);
     }else{
@@ -44,9 +45,8 @@ int main(){
     root = Insert(root,15);
     root = Insert(root,10);
     root = Insert(root,20);
-    printf("find 15 %d",Search(root,15));
-    printf("find 115 %d",Search(root,115));
-    printf("find 10 %d",Search(root,10));
-    printf("find 20 %d",Search(root,20));
-
+    printf("find 15 %d\n",Search(root,15));
+    printf("find 115 %d\n",Search(root,115));
+    printf("find 10 %d\n",Search(root,10));
+    printf("find 20 %d\n",Search(root,20));
 }
