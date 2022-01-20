@@ -49,6 +49,11 @@ int absolute_compare(int m,int n)
     if(abs(m) > abs(n)) return 1;
     return -1;
 }
+int qsort_compare(const void* m,const void* n){
+    int M = *((int *)m);
+    int N = *((int *)n);
+    return M - N;
+}
 int main(){
     // void (*p)() = A;
     // B(*p);
@@ -67,5 +72,10 @@ int main(){
     {
         printf("%d ",c[i]);
     }
+    // qsort(c,6,sizeof(int),qsort_compare);
+    //     for (i = 0; i < 6; i++)
+    // {
+    //     printf("%d ",c[i]);
+    // }
     return 0;
 }
