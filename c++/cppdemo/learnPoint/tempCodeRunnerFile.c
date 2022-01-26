@@ -1,90 +1,55 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
+//simple betting game
 /**
- * B[i][j] = *(B[i]+j)
- *          = *（*(B+i)+j）
- * *(B[i]+j)
- * B IJ can be written as Asterix of B i plus j if 
- * b ll for some value of i is a one dimensionnal array
- * then b i will give us an integer pointer will returne us an
- * integer pointer to the first integer in bi then adding j 
- * is basically performing pointer arithmetic and getting
- * a pointer to integer at index j in one dimensinal array bi
- * and then final this dereference is geting the value of tat ingeger
- * 
- * *（*(B+i)+j）
- * B+i return pointer to the one dimensional array of three integer and
- * T reference this partical deferenceing will give us the one dimensional
- * array and the name of one dimensional array return us a pointer to the first
- * element in the array.So once again will be pointer to integer.
- * 
- * int (*p)[j] = B
- * 
-*/
-void Func(int *A)//sugar A[]
-{
-    for (int i = 0; i < sizeof(A)/sizeof(*A); i++)
+ * Jack Queen King computer shuffers there cards
+ * player guess the posion of Queen
+ * if you wine ,you w'll get 3*bet 
+ * if you lose ,you looses the bet amount
+ * play have $100 initially
+ */
+int cash = 100;
+void Play(int bet){
+    // char c[3] = {'J','Q','K'};
+    char* c = (char*)malloc(1000000000*sizeof(char));
+    c[0] = 'J';
+    c[1] = 'Q';
+    c[2] = 'K';
+    printf("shuffering ...");
+    srand(time(NULL));
+    for (int i = 0; i < 5; i++)
     {
-        printf("address %p value %d \n",A+i,*(A+i));
+        int x = rand()%3;
+        int y = rand()%3;
+        int tmp = c[x];
+        c[x] = c[y];
+        c[y] = tmp;//swap charecters at position x and position y
     }
-    
-}
-void Func2(int**B)
-{
-    for (int i = 0; i < sizeof(B)/sizeof(*B); i++)
+    int playGuess;
+    printf("what's the position of Queen in - 1,2 or 3?");
+    scanf("%d",&playGuess);
+    if (c[playGuess -1] == 'Q')
     {
-        printf("address B %p value %p \n",B+i,*(B+i));
-        for (int j = 0; j < sizeof(*B)/sizeof(**B); j++)
-        {
-            printf("address B+j %p value %p \n",*(B+i)+j,*(*(B+i)+j));
-        }
-        
+        cash += 3* bet;
+        printf("You Wine,Result = %c %c %c Total cash= %d\n",c[0],c[1],c[2],cash);
+    }else{
+        cash -= bet;
+        printf("You Loose ,Result = %c %c %c Total cash= %d\n",c[0],c[1],c[2],cash);
     }
-    
+    free(c);
 }
 int main(){
-    int B[2][3] = {1,2,3,4,5,6};
-    printf("B %p\n",B);//B startAddress of two dimensional Array
-    printf("*B %p\n",*B);// one dimensional Array of three Integer
-    printf("B[0] %p\n",B[0]);
-    printf("B[0][0] %p\n",B[0][0]);
-    printf("&B[0][0] %p\n",&B[0][0]);
-
-
-
-    /**
-     * int c[3][2][2]
-     * int (*p)[2][2] = c;
-     * print c //800
-     * print *c or c[0] or &c[0][0]//800
-     *          int(*)[2]
-     * c[i][j][k] = *(c[i][j]+k) = *(*(c[i]+j)+k)
-     *            = *(*(*(c+i)+j)+k）
-     * 
-    */
-    int c[3][2][2] = {2,5,7,9,3,4,6,1,0,8,11,13};
-    printf("c %p \n",c);
-    printf("*c %p \n",*c);
-    printf("c[0] %p \n",c[0]);
-    printf("c[0][0] %p \n",c[0][0]);
-    printf("c[0][0][0] %p \n",c[0][0][0]);
-    printf("&c[0][0][0] %p \n",&c[0][0][0]);
-    for (int i = 0; i < sizeof(c)/sizeof(*c); i++)
+    int bet;
+    printf("**Welcome to the Vitural CashNo **\n");
+    while (cash > 0)
     {
-        printf("address c %p sizeof(c) %d sizeof(*c)%d \n\n",&c,sizeof(c),sizeof(*c));
-        for (int j = 0; j < sizeof(c[i])/sizeof(*c[i]); j++)
-        {
-            printf("address c[i] %p sizeof(c[i]) %d sizeof(*c[i])%d \n\n",&c[i],sizeof(c[i]),sizeof(*c[i]));
-            for (int k = 0; k < sizeof(c[i][j])/sizeof(*c[i][j]); k++)
-            {
-                printf("i %d j %d k %d value %d address %p\n",i,j,k,c[i][j][k],&c[i][j][k]);
-            }
-            
-        }
-        
+        printf("what's your bet $");
+        scanf("%d",&bet);
+        if (bet == 0 || bet > cash) break;
+        Play(bet);
+        printf("\n*****************************\n");
     }
-    int A[] = {1,2};
-    Func(A);
-    Func2(B);
     return 0;
 }
