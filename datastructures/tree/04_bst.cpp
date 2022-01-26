@@ -45,8 +45,18 @@ int main(){
     root = Insert(root,15);
     root = Insert(root,10);
     root = Insert(root,20);
-    printf("find 15 %d\n",Search(root,15));
-    printf("find 115 %d\n",Search(root,115));
-    printf("find 10 %d\n",Search(root,10));
-    printf("find 20 %d\n",Search(root,20));
+    int number;
+    cout<< "Enter number to be searched\n";
+    cin>>number;
+    if (Search(root,number) == true)
+    {
+        cout<<"Found\n";
+    }else{
+        cout<<"Not Found\n";
+    }
+    
+    // printf("find 15 %d\n",Search(root,15));
+    // printf("find 115 %d\n",Search(root,115));
+    // printf("find 10 %d\n",Search(root,10));
+    // printf("find 20 %d\n",Search(root,20));
 }

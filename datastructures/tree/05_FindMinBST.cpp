@@ -29,14 +29,24 @@ BstNode* Insert(BstNode* rootPtr,int data)
 int FindMin(BstNode* root){
     if (root == NULL)
     {
-        count<<"Tree is empty!\n"
+        cout<<"Tree is empty!\n";
         return -1;
     }    
     while (root->left != NULL)
     {
-        root = current->left;
+        root = root->left;
     }
     return root->data;
+}
+int FindMinR(BstNode* root){
+    if (root == NULL)
+    {
+        cout<<"Tree is empty!\n";
+        return -1;
+    }else if (root->left == NULL){
+        return root->data;
+    }
+    return FindMinR(root->left);
 }
 int main(){
     struct BstNode* root;
@@ -46,7 +56,7 @@ int main(){
     root = Insert(root,20);
     root = Insert(root,6);
     root = Insert(root,2);
-    cout<<FindMin(root)<<endl;
+    cout<<FindMinR(root)<<endl;
     
     // printf("find 15 %d\n",Search(root,15));
     // printf("find 115 %d\n",Search(root,115));
