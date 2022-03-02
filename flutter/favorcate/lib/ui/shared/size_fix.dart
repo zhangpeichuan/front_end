@@ -32,7 +32,5 @@ class HYSizeFit{
   static setPx(double size){
     return size * px;
   }
-}
-extension adfadf on int{
 
 }

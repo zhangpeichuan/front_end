@@ -1,0 +1,18 @@
+Application Memory
+
+0xFFFFFFF
+-----------
+内核空间    应用程序不许访问
+-----------3G 
+运行时的堆空间 heap runtime 运行时可以自由分配和自我管理释放 由程序员决定
+--------    
+栈空间 stack runtime 函数内生存周期
+--------    static
+    全局数据空间(初始化的,未初始化) RW data bss
+    只读数据段      "helloWorld"字符串常量R
+    代码段          code
+--------
+0x0:
+
+
+

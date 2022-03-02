@@ -14,8 +14,8 @@ class AppTheme{
     primaryColor: Colors.pink,
     primaryColorLight:Colors.pink,
     primaryColorDark:Colors.pink,
-    canvasColor: Color.fromRGBO(255, 254, 222, 1),
-    textTheme: TextTheme(
+    canvasColor: const Color.fromRGBO(255, 254, 222, 1),
+    textTheme: const TextTheme(
         bodyText2: TextStyle(fontSize: bodyFontSize),
         headline4: TextStyle(fontSize: smallFontSize, ),
         headline3: TextStyle(fontSize: normalFontSize),
@@ -31,8 +31,8 @@ class AppTheme{
     primaryColor: Colors.grey,
     primaryColorLight:Colors.grey,
     primaryColorDark:Colors.grey,
-    canvasColor: Color.fromRGBO(255, 254, 222, 1),
-    textTheme: TextTheme(
+    canvasColor: const Color.fromRGBO(255, 254, 222, 1),
+    textTheme: const TextTheme(
         bodyText2: TextStyle(fontSize: bodyFontSize),
         headline4: TextStyle(fontSize: smallFontSize, ),
         headline3: TextStyle(fontSize: normalFontSize),

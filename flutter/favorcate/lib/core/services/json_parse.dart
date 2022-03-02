@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:favorcate/core/model/category_model.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 class JsonParse{
@@ -15,7 +16,9 @@ class JsonParse{
     for (var category in categorys){
       categoryList.add(HYCategoryModel.fromJson(category));
     }
-    print(categoryList);
+    if (kDebugMode) {
+      print(categoryList);
+    }
     return categoryList;
 
 
