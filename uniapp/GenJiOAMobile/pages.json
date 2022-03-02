@@ -1,0 +1,108 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path":"pages/navigator/navigator"
+		},
+		{
+			"path":"pages/media/media"
+		},
+		{
+			"path":"pages/list/list",
+			"style":{
+				"enablePullDownRefresh":true,
+				"onReachBottomDistance":100
+			}
+		},
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "index"
+			}
+		},
+		{
+			"path": "pages/message/message",
+			"style": {
+				"navigationBarTitleText": "消息",
+				"navigationBarBackgroundColor":"#007AFF",
+				"h5":{
+                    "pullToRefresh": {
+                        "support": true,
+                        "color": "#fd6049",
+                        "style": "default",
+                        "contentdown": {
+                            "caption": "下拉可刷新自定义文本"
+                        },
+                        "contentover": {
+                            "caption": "释放可刷新自定义文本"
+                        },
+                        "contentrefresh": {
+                            "caption": "正在刷新自定义文本"
+                        }
+                    }
+				}
+			}
+		},
+		{
+			"path":"pages/contact/contact"
+		},
+		{
+			"path":"pages/detail/detail"
+		},
+		{
+			"path":"pages/home/home"
+		},
+		{
+			"path":"pages/uni-style/uni-style",
+			"style": {
+				"navigationBarTitleText": "uni-style"
+			}
+		}
+
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "GenJiOAMobile",
+		"navigationBarBackgroundColor": "#7FFF00",
+		"backgroundColor": "#7CCD7C",
+		// "enablePullDownRefresh":true,//全局生效
+		// "backgroundTextStyle":"light",
+		"onReachBottomDistance":100
+	},
+	"tabBar": {
+	    "color": "#7A7E83",
+		"backgroundColor":"#FFFFFF",
+	    "selectedColor": "#bd0d1e",
+	    "borderStyle": "white",
+		"position":"bottom",
+		"list": [
+			{
+	        "pagePath": "pages/index/index",
+	        "iconPath": "static/tab_01_nomal@2x.png",
+	        "selectedIconPath": "static/tab_01_selected@2x.png",
+	        "text": "首页"
+			}, 
+			{
+	        "pagePath": "pages/message/message",
+	        "iconPath": "static/tab_02_nomal@2x.png",
+	        "selectedIconPath": "static/tab_02_selected@2x.png",
+	        "text": "消息"
+			}, 
+			{
+	        "pagePath": "pages/contact/contact",
+	        "iconPath": "static/tab_05_nomal@2x.png",
+	        "selectedIconPath": "static/tab_05_selected@2x.png",
+	        "text": "我们"
+			}
+		]
+	},
+	"condition":{
+		"current":0,
+		"list":[
+			{
+				"name":"详情页",
+				"path":"pages/detail/detail",
+				"query":"id=80"
+			}
+		]
+	}
+}

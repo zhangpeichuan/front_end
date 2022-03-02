@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/navigator/navigator",
+    "pages/media/media",
+    "pages/list/list",
+    "pages/index/index",
+    "pages/message/message",
+    "pages/contact/contact",
+    "pages/detail/detail",
+    "pages/home/home",
+    "pages/uni-style/uni-style"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "GenJiOAMobile",
+    "navigationBarBackgroundColor": "#7FFF00",
+    "backgroundColor": "#7CCD7C",
+    "onReachBottomDistance": 100
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "backgroundColor": "#FFFFFF",
+    "selectedColor": "#bd0d1e",
+    "borderStyle": "white",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/tab_01_nomal@2x.png",
+        "selectedIconPath": "static/tab_01_selected@2x.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "iconPath": "static/tab_02_nomal@2x.png",
+        "selectedIconPath": "static/tab_02_selected@2x.png",
+        "text": "消息"
+      },
+      {
+        "pagePath": "pages/contact/contact",
+        "iconPath": "static/tab_05_nomal@2x.png",
+        "selectedIconPath": "static/tab_05_selected@2x.png",
+        "text": "我们"
+      }
+    ]
+  },
+  "usingComponents": {}
+}

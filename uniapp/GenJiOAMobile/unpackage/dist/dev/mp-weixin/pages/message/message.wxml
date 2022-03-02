@@ -1,0 +1,1 @@
+<view><view class="box2" hover-class="box-active2"><view class="box" hover-stop-propagation="{{true}}" hover-class="box-active" hover-start-time="1000" hover-stay-time="200">我是一个大盒</view></view></view>

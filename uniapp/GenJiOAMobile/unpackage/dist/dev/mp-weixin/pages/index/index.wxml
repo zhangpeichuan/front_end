@@ -1,0 +1,1 @@
+<view class="content"><image src="/static/logo.png"></image><image src="/static/logo.png" mode="center"></image><view class="text-area"><text class="title">{{title}}</text></view><button type="primary">按钮</button><button size="mini" plain="{{true}}" type="warn">按钮</button><button disabled="{{true}}" loading="{{true}}">按钮</button></view>

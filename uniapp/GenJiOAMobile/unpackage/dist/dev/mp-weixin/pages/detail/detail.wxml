@@ -1,0 +1,1 @@
+<view><text>唱歌跳舞打球</text><view></view><text selectable="{{true}}">唱歌跳舞打球</text><view></view><text style="font-size:100rpx;" space="emsp">唱歌   跳舞  打球</text><view></view><text>&</text></view>
