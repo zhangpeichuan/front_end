@@ -1,5 +1,5 @@
 import App from './App'
-
+import { myRequest } from './utils/api.js'
 // #ifndef VUE3
 import Vue from 'vue'
 Vue.config.productionTip = false
@@ -19,3 +19,4 @@ export function createApp() {
   }
 }
 // #endif
+Vue.prototype.$myrequest = myRequest

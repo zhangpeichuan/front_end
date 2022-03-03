@@ -12,10 +12,13 @@
 			}
 		},
 		onLoad() {
-
+			this.getSwipersApi()
 		},
 		methods: {
-
+		//获取轮播图数据
+			getSwipersApi(){
+				console.log('获取轮播图数据')
+			}
 		}
 	}
 </script>
