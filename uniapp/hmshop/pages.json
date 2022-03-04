@@ -18,6 +18,14 @@
 				"navigationBarTitleText": "商品列表",
 				"enablePullDownRefresh":true
 			}
+		},
+		{
+			"path": "pages/contact/contact"
+		},{
+			"path":"pages/pics/pics",
+			"style":{
+				"navigationBarTitleText":"社区图片"
+			}
 		}
 	],
 	"globalStyle": {

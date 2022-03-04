@@ -94,9 +94,9 @@
 			},
 			//导航点击的处理函数
 			navItem_Click(url){
-				console.log('navItem_Click')
+				console.log('navItem_Click '+url)
 				uni.navigateTo({
-					url:url
+					url
 				})
 			}
 		}
