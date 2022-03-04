@@ -15,21 +15,13 @@
 	<!-- 推荐商品 -->
 	<view class="recommend_goods">
 		<view class="recommend_goods_title">推荐商品</view>
-		<view class="goods_list">
-			<view class="goods_item" v-for="item in goods" :key="item.id">
-				<image :src="item.img_url"></image>
-				<view class="price">
-					<text>￥{{item.sell_price}}</text>
-					<text>￥{{item.market_price}}</text>
-				</view>
-				<view class="goods_name">{{item.title}}</view>
-			</view>
-		</view>
+		<goods-list :goods="goods"></goods-list>
 	</view>
 	</view>
 </template>
 
 <script>
+	import goodsList from '../../compontent/goods-list.vue'
 	export default {
 		data() {
 			return {
@@ -63,6 +55,7 @@
 			this.getSwipersApi()
 			this.getRecommendGoods()
 		},
+		components:{"goods-list":goodsList},
 		methods: {
 		//获取轮播图数据
 			async getSwipersApi(){
@@ -158,40 +151,5 @@
 			margin: 7rpx 0;
 		}
 	}
-	.goods_list{
-		padding: 0 15rpx;
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-		.goods_item{
-			background: #ffffff;
-			width: 355rpx;
-			margin: 10rpx 0;
-			padding: 15rpx;
-			box-sizing: border-box;//盒子不会被撑大
-			image{
-				width: 80%;
-				height: 150px;
-				display: block;
-				margin: 0 auto;
-			}
-			.price{
-				color: $shop-color;
-				font-size: 36rpx;
-				margin: 20prx 0 10rpx 0;
-				text:nth-child(2){
-					color: #ccc;
-					font-size: 28rpx;
-					margin-left: 7rpx;
-					text-decoration: line-through;
-				}
-			}
-			.goods_name{
-				font-size: 28rpx;
-				line-height: 50rpx;
-				padding-bottom: 15rpx;
-				padding-top: 10rpx;
-			}
-		}
-	}
+
 </style>
