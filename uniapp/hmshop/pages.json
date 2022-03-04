@@ -11,6 +11,8 @@
 		},
 		{
 			"path": "pages/member/member"
+		},{
+			"path":"pages/goods/goods"
 		}
 	],
 	"globalStyle": {
