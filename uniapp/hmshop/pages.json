@@ -21,11 +21,18 @@
 		},
 		{
 			"path": "pages/contact/contact"
-		},{
+		},
+		{
 			"path":"pages/pics/pics",
 			"style":{
 				"navigationBarTitleText":"社区图片"
 			}
+		},
+		{
+			"path":"pages/news/news_detail"
+		},
+		{
+			"path":"pages/goods/goods_detail"
 		}
 	],
 	"globalStyle": {

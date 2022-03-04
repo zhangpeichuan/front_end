@@ -15,7 +15,7 @@
 	<!-- 推荐商品 -->
 	<view class="recommend_goods">
 		<view class="recommend_goods_title">推荐商品</view>
-		<goods-list :goods="goods"></goods-list>
+		<goods-list :goods="goods" @itemClick="goGoodsDetail"></goods-list>
 	</view>
 	</view>
 </template>
@@ -97,6 +97,13 @@
 				console.log('navItem_Click '+url)
 				uni.navigateTo({
 					url
+				})
+			},
+			//跳转到商品详情
+			goGoodsDetail(id) {
+				console.log('goGoodsDetail '+id)
+				uni.navigateTo({
+					url:'/pages/goods/goods_detail?id='+id
 				})
 			}
 		}

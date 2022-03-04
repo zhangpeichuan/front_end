@@ -1,13 +1,13 @@
 <template>
 	<view>
-	<view class="new_item" v-for="item in list" :key="item.id">
+	<view class="new_item" @click="itemClick(item.id)" v-for="item in list" :key="item.id">
 		<image :src="item.img_url"></image>
 		<view class="right">
 			<view class="title">
 				{{item.title}}
 			</view>
 			<view class="info">
-				<text>发表时间:{{item.add_time}}</text>
+				<text>发表时间:{{item.add_time | formateDate }}</text>
 				<text>浏览次数:{{item.click}}</text>
 			</view>
 		</view>
@@ -17,7 +17,22 @@
 
 <script>
 	export default {
-		props:['list']
+		props:['list'],
+		filters:{//年月日过滤器
+			formateDate (date){
+				console.log(date)
+				const nDate = new Date(date)
+				const year = nDate.getFullYear()
+				const month = nDate.getMonth().toString().padStart(2,0)
+				const day = nDate.getDay().toString().padStart(2,0)
+				return year+'-'+month+'-'+ day
+			}
+		},
+		methods:{
+			itemClick(id){
+				this.$emit('itemClick',id)
+			}
+		}
 	}
 </script>
 

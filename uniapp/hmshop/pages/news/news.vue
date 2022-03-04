@@ -1,6 +1,7 @@
 <template>
 	<view class="news">
-	<news-item :list="newsList"></news-item>
+	<news-item @itemClick="goDetail"
+	:list="newsList" ></news-item>
 	</view>
 </template>
 
@@ -23,6 +24,12 @@
 				})
 				console.log(res)
 				this.newsList = res.data.message
+			},
+			goDetail(id) {
+				console.log('goDetail '+id)
+				uni.navigateTo({
+					url:'/pages/news/news_detail?id='+id
+				})
 			}
 		}
 	}

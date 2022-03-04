@@ -20,3 +20,11 @@ export function createApp() {
 }
 // #endif
 Vue.prototype.$myrequest = myRequest
+Vue.filter('formateDate',(date)=>{
+	console.log(date)
+	const nDate = new Date(date)
+	const year = nDate.getFullYear()
+	const month = nDate.getMonth().toString().padStart(2,0)
+	const day = nDate.getDay().toString().padStart(2,0)
+	return year+'-'+month+'-'+ day
+})
