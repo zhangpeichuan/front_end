@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue中的数据代理</title>
+    <!-- 引入vue -->
+    <script type="text/javascript" src="../js/vue.js">
+    </script>
+  </head>
+  <body>
+    <!-- 准备好一个容器 -->
+    <div id="root">
+      <h2>学校名称:{{name}}</h2>
+      <h2>学校地址:{{address}}</h2>
+      <h2>_data学校名称:{{_data.name}}</h2>
+      <h2>_data学校名称:{{_data.address}}</h2>
+
+    </div>
+    <!-- 设置为 false 以阻止 vue 在启动时生成生产提示。 -->
+    <script type="text/javascript">
+      Vue.config.productionTip = false
+      let data = {
+        name:"尚硅谷",
+        address:'宏富科技园'
+      }
+      //创建Vue实例
+       const vm = new Vue({
+            el:'#root',//el用于指定当前Vue实例为哪个容器服务，值通常为css选择器字符串
+            data:{
+              name:"尚硅谷",
+              address:'宏富科技园'
+      }
+      })
+    </script>
+  </body>
+</html>
