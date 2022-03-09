@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>姓名案例_计算属性简写</title>
+    <!-- 引入vue -->
+    <script type="text/javascript" src="../js/vue.js">
+    </script>
+  </head>
+  <body>
+    <!-- 准备好一个容器 -->
+    <div id="root">
+      姓：<input type="text" v-model="firstName"><br/>
+      名：<input type="text" v-model="lastName"><br/>
+      姓名：<span>{{fullName}}</span><br/>
+
+    </div>
+    <script type="text/javascript">
+      Vue.config.productionTip = false
+       const vm = new Vue({
+            el:'#root',
+            data:{
+                firstName:"张",
+                lastName:"三",
+            },
+            computed:{
+              // 简写，没有set方法时
+              fullName(){
+                  return this.firstName.slice(0,3)+'-'+this.lastName
+              }
+            }
+      })
+    </script>
+  </body>
+</html>
