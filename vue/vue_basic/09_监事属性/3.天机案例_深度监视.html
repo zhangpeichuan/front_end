@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>天气案例监事属性</title>
+    <!-- 引入vue -->
+    <script type="text/javascript" src="../js/vue.js">
+    </script>
+  </head>
+  <body>
+    <!-- 
+				深度监视：
+						(1).Vue中的watch默认不监测对象内部值的改变（一层）。
+						(2).配置deep:true可以监测对象内部值改变（多层）。
+				备注：
+						(1).Vue自身可以监测对象内部值的改变，但Vue提供的watch默认不可以！
+						(2).使用watch时根据数据的具体结构，决定是否采用深度监视。
+		 -->
+    <!-- 准备好一个容器 -->
+    <div id="root">
+      <h2>今天天气很 {{info}}</h2>
+      <button @click="changeWeather">切换天气</button>
+      <hr/>
+      <h3>a的值是：{{numbers.a}}</h3>
+      <button @click="numbers.a++">点我a++</button>
+      <h3>b的值是：{{numbers.b}}</h3>
+      <button @click="numbers.b++">点我b++</button>
+      <hr/>
+
+      <!-- <button @click="numbers = {a:666,b:888}">点我ab++</button> -->
+
+    </div>
+    <script type="text/javascript">
+      Vue.config.productionTip = false
+      const vm = new Vue({
+            el:'#root',
+            data:{
+              isHot:true,
+              numbers:{
+                a:1,
+                b:2
+              }
+            },
+            computed:{
+              info(){
+                return this.isHot ? '炎热':'凉爽'
+              }
+            },
+            methods: {
+              changeWeather(){
+                this.isHot = !this.isHot
+              }
+            },
+             watch:{
+              isHot:{
+                handler(newValue,oldValue){
+                  console.log('isHot handler',newValue,oldValue)
+                }
+              },
+              //监视多级结构中某个属性的变化
+              'numbers.a':{
+                handler(newValue,oldValue){
+                  console.log('numbers a handler',newValue,oldValue)
+                }
+              },
+              'numbers.b':{
+                handler(newValue,oldValue){
+                  console.log('numbers b handler',newValue,oldValue)
+                }
+              },
+              //监视多级结构中某个属性的变化
+              numbers:{
+                deep:true,//默认为false，不监视对象内部值的改变
+                handler(newValue,oldValue){
+                  console.log('numbers handler',newValue,oldValue)
+                }
+              },
+            } 
+      })
+    </script>
+  </body>
+</html>
