@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>分析生命周期</title>
+    <!-- 引入vue -->
+    <script type="text/javascript" src="../js/vue.js">
+    </script>
+  </head>
+  <body>
+    <!-- 准备好一个容器 -->
+    <div id="root">
+      <h2>当前n值是{{n}}</h2>
+      <button @click="add">点我n+1</button>
+      <button @click="destroy">点我销毁</button>
+    </div>
+    <script type="text/javascript">
+      Vue.config.productionTip = false
+      const vm = new Vue({
+            el:'#root',
+            // template:`
+            // <div>
+            // <h2>当前n值是{{n}}</h2>
+            // <button @click="add">点我n+1</button>
+            // <button @click="destroy">点我销毁</button>
+            // </div>
+            // `,
+            data:{
+              n:1,
+            },
+            methods: {
+              add(){
+                this.n++
+              },
+              destroy(){
+                this.destroy
+              }
+            },
+            beforeCreate() {
+              console.log('beforeCreate')
+            },
+            created() {
+              console.log('created',this)
+            },
+            beforeMount() {
+              console.log('beforeMount')
+            },
+            mounted() {
+              console.log('mounted',this.$el instanceof HTMLElement)
+            },
+            beforeUpdate() {
+              console.log('beforeUpdate')
+            },
+            updated() {
+              console.log('updated')
+            },
+            beforeDestroy() {
+              console.log('beforeDestroy')
+            },
+            destroyed() {
+              console.log('destroyed')
+            },
+      })
+    </script>
+  </body>
+</html>
